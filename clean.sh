@@ -1,0 +1,1 @@
+rm -r gradients logs noisy_batches temp_weights worker_weights
