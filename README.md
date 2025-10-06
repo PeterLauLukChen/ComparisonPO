@@ -2,7 +2,7 @@
 
 A novel, lightweight preference optimization algorithm for LLM post training. See the paper at [https://arxiv.org/abs/2505.05465](https://arxiv.org/abs/2505.05465). 
 
-## Example implementation for multi-nodes training (30 GPUs parallel processing)
+## Example implementation for multi-nodes training (30 GPUs parallel perturbation)
 
 Welcome to **ComPO**—a lightweight framework for distributed multi‑node training. This repository contains the shell scripts and Python modules required to launch, coordinate, and monitor large‑scale ComPO training runs across a master node and multiple worker nodes.
 
