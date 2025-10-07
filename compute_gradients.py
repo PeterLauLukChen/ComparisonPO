@@ -776,6 +776,9 @@ def main():
                     help='Path to save temp weights for next iteration')
     
     args = parser.parse_args()
+
+    # Running first 10 noisy pairs for example
+    valid_list_llama_ins = list(range(10))
     
     checkpoint_iters = []
     if args.checkpoint_iters:
@@ -798,16 +801,6 @@ def main():
     # Set up iteration-specific noisy batch directory
     iter_batch_dir = os.path.join(args.noisy_batch_dir, f"iter_{args.iteration}")
     os.makedirs(iter_batch_dir, exist_ok=True)
-    
-    #valid_list_llama_base = [0, 1, 2, 4, 8, 9, 10, 11, 13, 15, 17, 18, 20, 21, 28, 31, 32, 37, 38, 40, 42, 43, 45, 51, 54, 58, 60, 61, 64, 65, 66, 67, 71, 76, 79, 80, 82, 87, 92, 94, 97, 98]
-
-    #valid_list_llama_ins =[8,10,12,17,19,21,24,25,33,39,45,47,50,51,53,55,58,59,60,66,69,70,71,72,74,75,80,81,82,84,85,86,89,90,91,93,95,96,97,98]
-
-    #valid_list_llama_ins_simpo = [0,1,2,3,4,5,8,10,14,15,18,19,20,22,24,27,28,32,35,37,39,40,41,42,43,45,48,57, 58, 60, 62, 64, 66, 69, 70, 71, 72, 73, 79, 84, 87, 89, 90, 92, 94]
-
-    #valid_list_llama_ins_mistral_simpo = [1,4,8,12,14,20,23,29,40,42,50,51,53,54,56,57,67,77,80,88,92,94,96,97]
-
-    valid_list_llama_ins = [0,1,2,3,4,5,6,7,8,9]
     
     # Check if we should run this iteration
     if not args.run_all_iters and args.iteration not in valid_list_llama_ins and args.mode != 'find_pairs':
